@@ -8,7 +8,10 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Player Settings")]
     [SerializeField] private float _moveSpeed = 10.0f;
+    [SerializeField] private float _jumpForce = 10.0f;
 
+    // Boolean to determine if the player is on the ground
+    private bool _grounded;
     // Standard float for horizontal movement
     private float _horizontal;
     // Standard float for up and down vertical movement along the z axis
@@ -25,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         // Setting our rigidbody's velocity to our float multiplied by the movement speed.
-        _playerRB.velocity = new Vector3(_horizontal * _moveSpeed, 0, _vertical * _moveSpeed);
+        _playerRB.linearVelocity = new Vector3(_horizontal * _moveSpeed, _playerRB.linearVelocity.y, _vertical * _moveSpeed);
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -33,5 +36,13 @@ public class PlayerMovement : MonoBehaviour
         // Setting our floats to the controls
         _horizontal = context.ReadValue<Vector2>().x;
         _vertical = context.ReadValue<Vector2>().y;
+    }
+
+    public void Jump(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            _playerRB.linearVelocity = new Vector3(0, _jumpForce, 0);
+        }
     }
 }
