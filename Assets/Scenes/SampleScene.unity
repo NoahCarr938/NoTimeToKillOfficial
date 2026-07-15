@@ -483,6 +483,8 @@ GameObject:
   - component: {fileID: 1129991513}
   - component: {fileID: 1129991518}
   - component: {fileID: 1129991517}
+  - component: {fileID: 1129991520}
+  - component: {fileID: 1129991519}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -730,11 +732,53 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: b027d247-d425-4dd2-9499-7ca50f8bf93f
     m_ActionName: 'Player/Jump[/Keyboard/space]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1129991519}
+        m_TargetAssemblyTypeName: PlayerAttacks, Assembly-CSharp
+        m_MethodName: SwingWeapon
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 29b8d608-125e-4ce0-8d50-202e06df7afb
+    m_ActionName: 'Player/Attack[/Mouse/leftButton]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1129991519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129991511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86288cbb6af733948bab2153a73759f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAttacks
+  attackHitbox: {fileID: 7292165720289964854, guid: 286ae16d0643a8a47ba4ef08695c0022, type: 3}
+--- !u!114 &1129991520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129991511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d7f85157ac559741ad9a963a88eae5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthComponent
+  _health: 100
 --- !u!1 &1242357072
 GameObject:
   m_ObjectHideFlags: 0
