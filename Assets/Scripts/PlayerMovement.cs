@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Player Settings")]
-    [SerializeField] private float _moveSpeed = 10.0f;
+    [SerializeField] private float _moveSpeed = 12.5f;
     [SerializeField] private float _jumpForce = 10.0f;
 
     // Boolean to determine if the player is on the ground
